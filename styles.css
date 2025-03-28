@@ -1,5 +1,4 @@
-/* styles.css - Dark Theme for Vijaya B Portfolio */
-
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -14,21 +13,38 @@ body {
   padding: 0 1.5rem;
 }
 
+/* === HEADER === */
 header {
+  position: relative;
   text-align: center;
-  padding: 2rem 0;
-  background-color: #161b22;
-  border-bottom: 1px solid #30363d;
+  padding: 5rem 1rem 6rem;
+  background-image: url('assets/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+header h1, header p, header nav {
+  position: relative;
+  z-index: 1;
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #58a6ff;
 }
 
 header p {
   font-size: 1.2rem;
-  color: #8b949e;
+  color: #c9d1d9;
+  margin-bottom: 1rem;
 }
 
 nav {
@@ -40,14 +56,16 @@ nav a {
   margin: 0 10px;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #1f6feb;
 }
 
+/* === SECTIONS === */
 section {
-  margin: 2.5rem 0;
+  padding: 2.5rem 1rem;
 }
 
 section h2 {
@@ -63,6 +81,17 @@ ul {
   margin-left: 1.5rem;
 }
 
+/* Color blocks for each section */
+#about { background-color: #161b22; }
+#skills { background-color: #0d1117; }
+#projects { background-color: #1f2937; }
+#experience { background-color: #111827; }
+#contact {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+}
+
+/* === PROJECTS & JOBS === */
 .project, .job {
   background-color: #161b22;
   padding: 1rem;
@@ -75,6 +104,7 @@ ul {
   color: #79c0ff;
 }
 
+/* === FOOTER === */
 footer {
   text-align: center;
   padding: 1rem 0;
@@ -83,10 +113,29 @@ footer {
   color: #8b949e;
 }
 
+/* === LINKS === */
 a {
   color: #58a6ff;
+  text-decoration: none;
 }
 
 a:hover {
   color: #1f6feb;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 6px;
+  }
 }
